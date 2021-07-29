@@ -1,0 +1,87 @@
+{
+  "env": {
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["airbnb-eslint-typescript","plugin:@typescript-eslint/recommended"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "ENV_PRODUCTION": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "jest"],
+  "rules": {
+    "no-return-await": 0,
+    "require-await": "error",
+    "arrow-parens": 0,
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "no-console": 0,
+    "no-unused-vars": 0,
+    "indent": 0,
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "always-multiline"
+      }
+    ],
+    "no-useless-constructor": 0,
+    "no-param-reassign": ["error", { "props": false }],
+    "class-methods-use-this": 0,
+    "lines-between-class-members": 0,
+    "object-curly-newline": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["src/e2e/**.*", "**/*.test.*", "**/*.spec.*"] }
+    ],
+    "import/prefer-default-export": 0,
+    "function-paren-newline": 0,
+    "@typescript-eslint/indent": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-empty-interface": 1,
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": true,
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-useless-constructor": 2,
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "import/extensions": [
+      2,
+      {
+        "ts": "never",
+        "js": "never",
+        "json": "always"
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ImportDeclaration[source.value=/type-graphql/] ImportSpecifier[imported.name=\"Authorized\"]",
+        "message": "Import Authorized from graphql/auth/Authorized to have the right type check"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".ts"]
+      }
+    }
+  }
+}

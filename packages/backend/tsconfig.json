@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictPropertyInitialization": false,
+    "module": "commonjs",
+    "target": "es2020",
+    "rootDir": "src",
+    "lib": ["ESNext", "esnext.asynciterable"],
+    "paths": {
+      "app/*": ["./src/app/*"]
+    }
+  },
+  "exclude": ["build", "node_modules"],
+  "include": ["./src"]
+}
